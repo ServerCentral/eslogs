@@ -32,7 +32,7 @@ async function init() {
     }
 
     if (hostname) {
-      must.push({ wildcard: { [hostnameKey]: hostname } });
+      must.push({ wildcard: { [hostnameKey]: hostname.toLowerCase() } });
     }
 
     let spinner = ora().start();
@@ -63,7 +63,7 @@ async function init() {
       let messages = hits.map(h => h._source).map(s => buildLine(s, hostnameKey, messageKey));
 
       if (messages.length) {
-        console.log(messages.reverse().join('\n'));
+        console.log(messages.sort().join('\n'));
       }
     }
     catch (error) {
