@@ -6,6 +6,7 @@ Pass it a query, and it outputs the matching log lines, as if you had run `cat` 
 
 Installation
 ===
+* `npm install eslogs -g`
 * Edit ~/.eslogs.json
 * Update values to match your elasticsearch instance and index mappings
 * `eslogs --help`
