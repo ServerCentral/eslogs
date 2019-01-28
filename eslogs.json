@@ -1,0 +1,11 @@
+{
+  "host": "localhost:9200",
+  "indices": {
+    "logstash-*": {
+      "messageKey": "message",
+      "timestampKey": "@timestamp",
+      "hostnameKey": "host"    
+    }
+  }
+ }
+ 
