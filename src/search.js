@@ -28,11 +28,11 @@ async function init() {
     let must = [];
 
     if (query) {
-      must.push({ match: { [messageKey]: { query, lenient: true } } });
+      must.push({ match: { [messageKey]: { query, operator: 'and', lenient: true } } });
     }
 
     if (hostname) {
-      must.push({ match: { [hostnameKey]: { query: hostname, lenient: true } } });
+      must.push({ wildcard: { [hostnameKey]: hostname } });
     }
 
     let spinner = ora().start();
