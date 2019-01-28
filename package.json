@@ -6,7 +6,7 @@
   "author": "John Susek",
   "repository": "github:ServerCentral/eslogs",
   "scripts": {
-    "postinstall": "node scripts/postinstall.js"
+    "postinstall": "scripts/postinstall.js"
   },
   "bugs": {
     "url": "https://github.com/ServerCentral/eslogs/issues"
