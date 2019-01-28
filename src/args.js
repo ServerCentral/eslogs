@@ -1,4 +1,5 @@
 let args = require('minimist')(process.argv.slice(2));
+let package = require('../package.json');
 
 function parse() {
   if (args.help) {
@@ -8,6 +9,7 @@ Options:
 -q query           A free-text search.
 -s n               Return n latest results. Higher sizes take longer. Default 100.
 -h name            Only show logs from hosts that match this name.
+--version          Show version number.
   
 Examples:
 eslogs logstash-*
@@ -21,6 +23,11 @@ watch eslogs logstash-* error -s 30
   `;
 
     console.log(help);
+    process.exit();
+  }
+
+  if (args.version) {
+    console.log(package.version);
     process.exit();
   }
 
