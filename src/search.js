@@ -57,6 +57,8 @@ async function init() {
         size
       });
 
+      spinner.stop();
+
       let hits = res.hits.hits;
       let messages = hits.map(h => h._source).map(s => buildLine(s, hostnameKey, messageKey));
 
@@ -65,11 +67,9 @@ async function init() {
       }
     }
     catch (error) {
+      spinner.stop();
       console.log('There was an error while searching. Aborting.');
       process.exit(1);
-    }
-    finally {
-      spinner.stop();
     }
   }
   catch (error) {
