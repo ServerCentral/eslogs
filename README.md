@@ -29,7 +29,7 @@ eslogs logstash-* -q error
 eslogs logstash-* -q "192.168.1.100"
 eslogs logstash-* -q "failed with error"
 eslogs logstash-* -q error -h myhost
-eslogs logstash-* -q error -h 208.*
+eslogs logstash-* -q error -h 192.168.1.1
 eslogs logstash-* -q error -s 1000 | less -S
 watch eslogs logstash-* error -s 30
 ```
