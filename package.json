@@ -5,6 +5,13 @@
   "main": "index.js",
   "author": "John Susek",
   "repository": "github:ServerCentral/eslogs",
+  "scripts": {
+    "postinstall": "scripts/postinstall.js"
+  },
+  "bugs": {
+    "url": "https://github.com/ServerCentral/eslogs/issues"
+  },
+  "homepage": "https://github.com/ServerCentral/eslogs",
   "keywords": [
     "elasticsearch",
     "logstash",
@@ -14,7 +21,7 @@
     "node": ">=8"
   },
   "bin": {
-    "outside": "src/index.js"
+    "eslogs": "src/index.js"
   },
   "dependencies": {
     "date-fns": "1.30.1",

@@ -6,9 +6,9 @@ Pass it a query, and it outputs the matching log lines, as if you had run `cat` 
 
 Installation
 ===
-* Copy eslogs.json to ~/.eslogs.json
+* Edit ~/.eslogs.json
 * Update values to match your elasticsearch instance and index mappings
-* `node src/index.js --help`
+* `eslogs --help`
 
 Usage
 ===
