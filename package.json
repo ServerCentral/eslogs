@@ -1,9 +1,10 @@
 {
   "name": "eslogs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A command-line tool for searching logs stored in elasticsearch.",
   "main": "index.js",
   "author": "John Susek",
+  "repository": "github:ServerCentral/eslogs",
   "keywords": [
     "elasticsearch",
     "logstash",
