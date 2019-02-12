@@ -12,7 +12,7 @@ Installation
 
 Usage
 ===
-```bash
+```
 Usage: eslogs index [options]
   
 Options:
@@ -38,7 +38,7 @@ watch eslogs logstash-* -q error -s 30
 
 Example config
 ===
-```json
+```
 {
   "host": "localhost:9200",
   "indices": {
