@@ -4,6 +4,7 @@ module.exports = {
         "es6": true
     },
     "rules": {
+        "no-empty": "off",
         "no-underscore-dangle": "off",
         "prefer-destructuring": "off",
         "no-param-reassign": "off",

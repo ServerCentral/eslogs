@@ -7,7 +7,7 @@ It takes a simple search phrase and returns log lines that match that search.
 Installation
 ===
 * `npm install -g eslogs`
-* Edit `~/.eslogs.json` to match your elasticsearch configuration.
+* Edit `~/.eslogs.json` or `/etc/eslogs.json` to match your elasticsearch configuration.
 * `eslogs --help`
 
 Usage
