@@ -1,6 +1,6 @@
 {
   "name": "eslogs",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A command-line tool for searching logs stored in elasticsearch.",
   "main": "index.js",
   "author": "John Susek",
