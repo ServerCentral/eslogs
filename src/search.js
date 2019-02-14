@@ -59,7 +59,7 @@ async function search() {
       sort: [
         {
           [timestampKey]: {
-            order: 'desc'
+            order: 'asc'
           }
         }
       ]
@@ -112,7 +112,7 @@ async function init() {
     spinner.stop();
 
     if (messages.length) {
-      console.log(messages.sort().join('\n'));
+      console.log(messages.join('\n'));
     }
   }
   catch (error) {
