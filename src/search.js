@@ -3,6 +3,7 @@ let ora = require('ora');
 let client = require('./client');
 let args = require('./args');
 let config = require('./config');
+let { buildSearch } = require('./searchHelper');
 
 let {
   index, hostname, size, query, time
@@ -46,26 +47,11 @@ async function search() {
 
   must.push({ range: { [timestampKey]: { lt: time } } });
 
-  return client.search({
-    index,
-    scroll: '30s',
-    _source: [timestampKey, hostnameKey, messageKey],
-    body: {
-      query: {
-        bool: {
-          must
-        }
-      },
-      sort: [
-        {
-          [timestampKey]: {
-            order: 'asc'
-          }
-        }
-      ]
-    },
-    size: size > 10000 ? 10000 : size
-  });
+  let searchBody = buildSearch(
+    query, index, size, hostname, time, messageKey, timestampKey, hostnameKey
+  );
+
+  return client.search(searchBody);
 }
 
 async function init() {
@@ -112,7 +98,10 @@ async function init() {
     spinner.stop();
 
     if (messages.length) {
-      console.log(messages.join('\n'));
+      // we reverse here because we sort descending in the search
+      // to get the most recent x results,
+      // but we want to show to the user in ascending order
+      console.log(messages.reverse().join('\n'));
     }
   }
   catch (error) {
